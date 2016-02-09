@@ -4,6 +4,8 @@ var her;
 var him_adjuster;
 var her_adjuster;
 
+var index = 0;
+
 //joints
 var j_head;
 var j_torso_top;
@@ -90,11 +92,14 @@ function draw(){
 }
 
 function drawLines(){
-	for(var i = 0; i < 80; i += (height/1000)){
-		stroke(200-i, 100);
-		strokeWeight(20);
+	index++;
+	for(var i = 0; i < 100; i += (height/1000)){
+		stroke(250-i, 200);
+		strokeWeight(cos(millis()*0.005+i)*2+2);
 		line(0, height-i*i, width, height-i*i);
 	}
+
+	index = index % 80;
 }
 
 function keyTyped(){
@@ -166,6 +171,19 @@ function keyTyped(){
 		her.limbs.forEach(function(l){
 			l.wither();
 		});
+	}
+
+	if(key == '['){
+		moveCoeff *= 0.9;
+	}
+
+	if(key == ']'){
+		moveCoeff *= 1.1;
+	}
+
+	if(key == '\\'){
+		him_adjuster.slowDown();
+		her_adjuster.slowDown();
 	}
 
 	return false;

@@ -110,6 +110,10 @@ var Skeleton = function(_position, _gender){
 		this.lerp_val = 0;
 	}
 
+	this.slowDown = function(){
+		this.lerp_inc *= 0.5;
+	}
+
 	this.getPosition = function(){
 		return this.position;
 	}
