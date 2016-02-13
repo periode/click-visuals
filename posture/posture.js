@@ -161,6 +161,8 @@ function keyTyped(){
 		currentPosture = 3;
 	if(key == '4')
 		currentPosture = 4;
+		if(key == '5')
+			currentPosture = 5;
 
 	if(key == 'u' || key == 'U'){
 		him_adjuster.unshadow();
@@ -616,21 +618,21 @@ function specificPosture(_number, _gender){
 				var j_torso_bottom = new Joint(createVector(width*0.5, height*0.5));
 				sp.push(j_torso_bottom);
 
-				var j_shoulder_left = new Joint(createVector(width*0.425, height*0.225));
+				var j_shoulder_left = new Joint(createVector(width*0.5, height*0.225));
 				sp.push(j_shoulder_left);
-				var j_shoulder_right = new Joint(createVector(width*0.575, height*0.225));
+				var j_shoulder_right = new Joint(createVector(width*0.5, height*0.225));
 				sp.push(j_shoulder_right);
-				var j_elbow_left = new Joint(createVector(width*0.45, height*0.375));
+				var j_elbow_left = new Joint(createVector(width*0.55, height*0.3));
 				sp.push(j_elbow_left);
-				var j_elbow_right = new Joint(createVector(width*0.6, height*0.205));
+				var j_elbow_right = new Joint(createVector(width*0.55, height*0.3));
 				sp.push(j_elbow_right);
-				var j_wrist_left = new Joint(createVector(width*0.6, height*0.25));
+				var j_wrist_left = new Joint(createVector(width*0.6, height*0.195));
 				sp.push(j_wrist_left);
-				var j_wrist_right = new Joint(createVector(width*0.6, height*0.1));
+				var j_wrist_right = new Joint(createVector(width*0.6, height*0.175));
 				sp.push(j_wrist_right);
-				var j_palm_left = new Joint(createVector(width*0.615, height*0.25));
+				var j_palm_left = new Joint(createVector(width*0.625, height*0.1));
 				sp.push(j_palm_left);
-				var j_palm_right = new Joint(createVector(width*0.55, height*0.115));
+				var j_palm_right = new Joint(createVector(width*0.635, height*0.1));
 				sp.push(j_palm_right);
 
 				var j_hip_left = new Joint(createVector(width*0.475, height*0.625));
@@ -657,21 +659,21 @@ function specificPosture(_number, _gender){
 				var j_torso_bottom = new Joint(createVector(width*0.5, height*0.5));
 				sp.push(j_torso_bottom);
 
-				var j_shoulder_left = new Joint(createVector(width*0.425, height*0.225));
+				var j_shoulder_left = new Joint(createVector(width*0.5, height*0.225));
 				sp.push(j_shoulder_left);
-				var j_shoulder_right = new Joint(createVector(width*0.575, height*0.225));
+				var j_shoulder_right = new Joint(createVector(width*0.5, height*0.225));
 				sp.push(j_shoulder_right);
-				var j_elbow_left = new Joint(createVector(width*0.45, height*0.375));
+				var j_elbow_left = new Joint(createVector(width*0.525, height*0.395));
 				sp.push(j_elbow_left);
-				var j_elbow_right = new Joint(createVector(width*0.6, height*0.205));
+				var j_elbow_right = new Joint(createVector(width*0.525, height*0.375));
 				sp.push(j_elbow_right);
-				var j_wrist_left = new Joint(createVector(width*0.6, height*0.25));
+				var j_wrist_left = new Joint(createVector(width*0.55, height*0.395));
 				sp.push(j_wrist_left);
-				var j_wrist_right = new Joint(createVector(width*0.6, height*0.1));
+				var j_wrist_right = new Joint(createVector(width*0.6, height*0.375));
 				sp.push(j_wrist_right);
-				var j_palm_left = new Joint(createVector(width*0.615, height*0.25));
+				var j_palm_left = new Joint(createVector(width*0.55, height*0.4));
 				sp.push(j_palm_left);
-				var j_palm_right = new Joint(createVector(width*0.55, height*0.115));
+				var j_palm_right = new Joint(createVector(width*0.585, height*0.4));
 				sp.push(j_palm_right);
 
 				var j_hip_left = new Joint(createVector(width*0.475, height*0.625));
