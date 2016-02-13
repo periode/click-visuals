@@ -25,7 +25,7 @@ var Joint = function(_pos){
 			this.acceleration.mult(0);
 		}
 
-		
+
 		if(this.lerpVal < 1){
 			this.pos.lerp(this.initpos, this.lerpVal);
 			this.lerpVal += this.lerpInc;

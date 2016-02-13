@@ -67,11 +67,11 @@ var Skeleton = function(_position, _gender){
 			});
 		}
 
-		
+
 		if(this.lerp_val < 1){
 			this.lerp_val += this.lerp_inc;
 		}
-			
+
 
 		this.position.lerp(this.target_position, this.lerp_val);
 	}
@@ -80,7 +80,7 @@ var Skeleton = function(_position, _gender){
 		push();
 		translate(this.position.x, this.position.y);
 		stroke(this.color);
-		
+
 		if(this.gender == "her" || this.gender == "him"){
 			this.joints.forEach(function(j){
 				j.display();
@@ -103,7 +103,7 @@ var Skeleton = function(_position, _gender){
 	this.shadow = function(pos){
 		this.target_position = pos.copy();
 		this.lerp_val = 0;
-	}	
+	}
 
 	this.unshadow = function(){
 		this.target_position = this.original_position.copy();
@@ -159,7 +159,6 @@ var Skeleton = function(_position, _gender){
 		this.joints.push(this.j_toe_left);
 		this.j_toe_right = new Joint(createVector(width*0.58, height*0.95));
 		this.joints.push(this.j_toe_right);
-		console.log("populated array",this.joints);
 	}
 
 	this.setupLimbs = function(){
