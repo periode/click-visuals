@@ -83,7 +83,8 @@ function update(){
 
 function draw(){
 	update();
-	background(255, 255, 257);
+	noCursor();
+	background(0);
 	drawLines();
 	her_adjuster.display();
 	him_adjuster.display();
@@ -94,14 +95,11 @@ function draw(){
 }
 
 function drawLines(){
-	index++;
-	for(var i = 0; i < 100; i += (height/1000)){
-		stroke(250-i, 200);
+	for(var i = 0; i < 100; i += (height/1500)){
+		stroke(i*2+40, 80);
 		strokeWeight(cos(millis()*0.005+i)*2+2);
 		line(0, height-i*i, width, height-i*i);
 	}
-
-	index = index % 80;
 }
 
 function keyTyped(){
@@ -125,11 +123,18 @@ function keyTyped(){
 	}
 
 	if(key == 's' || key == 'S'){
-		him_adjuster.shadow(him.getPosition());
-		her_adjuster.shadow(her.getPosition());
-
 		var newPostureHim = specificPosture(currentPosture, "him");
 		var newPostureHer = specificPosture(currentPosture, "her");
+
+		for(var i = 0; i < him_adjuster.joints.length; i++){
+				him_adjuster.joints[i].initpos = newPostureHim[i].pos;
+				him_adjuster.joints[i].reset();
+				her_adjuster.joints[i].initpos = newPostureHer[i].pos;
+				her_adjuster.joints[i].reset();
+		}
+
+		him_adjuster.shadow(him.getPosition());
+		her_adjuster.shadow(her.getPosition());
 
 		for(var i = 0; i < her.joints.length; i++){
 			her.joints[i].initpos = newPostureHer[i].pos;
@@ -145,6 +150,7 @@ function keyTyped(){
 			l.wither();
 		});
 	}
+
 	if(key == '0')
 		currentPosture = 0;
 	if(key == '1')
@@ -211,12 +217,6 @@ function displayJoints(){
 	}
 }
 
-function setNewPosture(key){
-	//decide which one to modify
-	//if(key == 1) him.initpos = otherpos;
-	//or sth like that
-}
-
 function displayLimbs(){
 	for(var i = 0; i < limbs.length; i++){
 		limbs[i].display();
@@ -227,6 +227,7 @@ function specificPosture(_number, _gender){
 	var sp = [];
 
 	if(_number == 0){
+		console.log('hello number 0');
 		var j_head = new Joint(createVector(width*0.5, height*0.1));
 		sp.push(j_head);
 		var j_torso_top = new Joint(createVector(width*0.5, height*0.2));
@@ -235,7 +236,7 @@ function specificPosture(_number, _gender){
 		sp.push(j_torso_bottom);
 
 		var j_shoulder_left = new Joint(createVector(width*0.425, height*0.225));
-		sp.joints.push(j_shoulder_left);
+		sp.push(j_shoulder_left);
 		var j_shoulder_right = new Joint(createVector(width*0.575, height*0.225));
 		sp.push(j_shoulder_right);
 		var j_elbow_left = new Joint(createVector(width*0.4, height*0.375));
