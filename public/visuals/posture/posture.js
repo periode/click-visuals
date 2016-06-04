@@ -56,10 +56,7 @@ var currentPosture = 0;
 var fade = 0;
 var canFade = false;
 
-function setup(){
-	var cnv = createCanvas(windowWidth*0.8, windowHeight);
-
-
+function setup_posture(){
 	her = new Skeleton(createVector(width*0.25, 0), "her");
 	him = new Skeleton(createVector(-width*0.25, 0), "him");
 	her.setupJoints();
@@ -76,7 +73,7 @@ function setup(){
 	her_adjuster.setupLimbs();
 }
 
-function update(){
+function update_posture(){
 	her.update();
 	him.update();
 
@@ -87,8 +84,8 @@ function update(){
 		fade++;
 }
 
-function draw(){
-	update();
+function draw_posture(){
+	update_posture();
 	noCursor();
 	background(250);
 	drawLines();

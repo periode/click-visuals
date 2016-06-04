@@ -35,4 +35,9 @@ var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function(socket){
   console.log('new connection with ID',socket.id);
+
+  socket.on('switch-scene', function(data){
+    console.log('switching scene to', data);
+    io.sockets.emit('switch-scene', data);
+  });
 });

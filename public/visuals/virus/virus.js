@@ -3,7 +3,7 @@ var individuals = [];
 var squares = [];
 var canseek = false;
 
-function setup(){
+function setup_virus(){
 	var cnv = createCanvas(windowWidth, windowHeight);
 
 	//create individuals
@@ -11,7 +11,7 @@ function setup(){
 		var r = 5+Math.random()*20;
 		if(i == 0)
 			var p = createVector(random(r, width-r), random(r, height-r));
-		else 
+		else
 			var p = getStartingPosition();
 
 		individuals[i] = new Individual(r, p, i);
@@ -31,7 +31,7 @@ function setup(){
 	}
 }
 
-function update(){
+function update_virus(){
 	for(var i = 0; i < squares.length; i++){
 		squares[i].update();
 	}
@@ -41,11 +41,11 @@ function update(){
 	}
 }
 
-function draw(){
+function draw_virus(){
 	background(255);
-	
 
-	update();
+
+	update_virus();
 
 	for(var i = 0; i < squares.length; i++){
 		squares[i].display();
@@ -54,8 +54,6 @@ function draw(){
 	for(var i = 0; i < individuals.length; i++){
 		individuals[i].display();
 	}
-
-
 }
 
 function drawBorder(){

@@ -3,15 +3,30 @@
 <head>
   <title> cl!ck - main </title>
 </head>
-<script src="socket.io.js"></script>
+<script src="libs/socket.io.js"></script>
+<script src="controller.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <body>
 <h3>< / cl!ck > conductor</h3>
 
 
-<!-- have a drop down menu that selects one of the states for one of the screens and then press a button to submit it and then get a success message.-->
+<!--
+
+1. have a drop down menu that selects one of the states for one of the screens and then press a button to submit it and then get a success message.
+
+2. find a way to fullscreen directly in JS?
+
+3.
+
+
+
+
+-->
 
 <a href="virus/virus.html">virus</a>
 <a href="posture/posture.html">posture</a>
+<a href="visuals/visuals.html">visuals</a>
+<button onclick="switchScene('virus')">switch to virus</button>
+<button onclick="switchScene('posture')">switch to posture</button>
 </body>
 </html>
