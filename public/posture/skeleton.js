@@ -50,9 +50,9 @@ var Skeleton = function(_position, _gender){
 	this.lerp_inc = 0.001;
 
 	if(this.gender == "her")
-		this.color = color(200, 100, 100, 200);
+		this.color = color(250, 100, 100, 250);
 	else if(this.gender == "him")
-		this.color = color(20, 20, 130, 200);
+		this.color = color(20, 20, 230, 250);
 	else
 		this.color = color(200, 200, 200, 200);
 

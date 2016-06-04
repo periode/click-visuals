@@ -8,7 +8,7 @@ var Joint = function(_pos){
 	this.rad = 1;
 
 	this.lerpVal = 1;
-	this.lerpInc = 0.001;
+	this.lerpInc = 0.0055;
 
 	this.distanceFromOrigin = 40;
 

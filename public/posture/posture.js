@@ -51,10 +51,13 @@ var shadow = false;
 
 var moveCoeff = 4;
 
-var currentPosture = 1;
+var currentPosture = 0;
+
+var fade = 0;
+var canFade = false;
 
 function setup(){
-	var cnv = createCanvas(windowWidth, windowHeight);
+	var cnv = createCanvas(windowWidth*0.8, windowHeight);
 
 
 	her = new Skeleton(createVector(width*0.25, 0), "her");
@@ -79,19 +82,23 @@ function update(){
 
 	him_adjuster.update();
 	her_adjuster.update();
+
+	if(canFade)
+		fade++;
 }
 
 function draw(){
 	update();
 	noCursor();
-	background(0);
+	background(250);
 	drawLines();
 	her_adjuster.display();
 	him_adjuster.display();
 	her.display();
 	him.display();
 
-
+	fill(0, fade);
+	rect(0, 0, width, height);
 }
 
 function drawLines(){
@@ -105,8 +112,8 @@ function drawLines(){
 function keyTyped(){
 	if(key == 'f' || key == 'F'){
 		var f = createVector(random(-moveCoeff, moveCoeff), random(-moveCoeff, moveCoeff));
-		var randomPicked = Math.floor(random(her.joints.length));
-		her.joints[randomPicked].move(f);
+		var randomPicked = Math.floor(random(him.joints.length));
+		him.joints[randomPicked].move(f);
 	}
 
 	if(key == 'g' || key == 'G'){
@@ -118,8 +125,8 @@ function keyTyped(){
 
 	if(key == 'h' || key == 'H'){
 		var f = createVector(random(-moveCoeff, moveCoeff), random(-moveCoeff, moveCoeff));
-		var randomPicked = Math.floor(random(him.joints.length));
-		him.joints[randomPicked].move(f);
+		var randomPicked = Math.floor(random(her.joints.length));
+		her.joints[randomPicked].move(f);
 	}
 
 	if(key == 's' || key == 'S'){
@@ -209,6 +216,9 @@ function keyTyped(){
 		him_adjuster.slowDown();
 		her_adjuster.slowDown();
 	}
+
+	if(key == 'z')
+	canFade = true;
 
 	return false;
 }
