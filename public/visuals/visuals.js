@@ -8,6 +8,9 @@ function setup(){
   if(state == 'posture'){
     setup_posture();
   }
+
+  if(state == 'expression')
+    setup_expression();
 }
 
 function draw(){
@@ -16,4 +19,7 @@ function draw(){
 
   if(state == 'posture')
     draw_posture();
+
+  if(state == 'expression')
+    draw_expression();
 }
