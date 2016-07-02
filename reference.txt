@@ -1,0 +1,10 @@
+open up the link 'visuals' in a new tab
+
+default animation is 'expression'
+
+click on different buttons from the conductor page to trigger different behaviors
+
+
+== EXPRESSION ==
+. press M to toggle between moving and static
+. press T to reverse movement speed

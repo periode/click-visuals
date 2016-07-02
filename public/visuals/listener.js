@@ -14,5 +14,7 @@ socket.on('switch-scene', function(data){
     setup_virus();
   }else if(state == 'posture'){
     setup_posture();
+  }else if(state == 'expression'){
+    setup_expression();
   }
 });
