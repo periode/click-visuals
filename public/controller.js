@@ -8,6 +8,13 @@ socket.on('connect', function(){
 function switchScene(scene){
   console.log('activating',scene);
   socket.emit('switch-scene', scene);
+
+  var ctrl = document.getElementsByClassName('control');
+  for(var i = 0; i < ctrl.length; i++){
+    ctrl[i].style.display = 'none';
+  }
+
+  document.getElementById(scene).style.display = 'block';
 }
 
 

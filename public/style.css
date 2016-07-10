@@ -20,7 +20,24 @@ a{
 
 button {
   padding: 1%;
+  width: 80%;
   font-size: 1.6em;
   background-color: grey;
   color: white;
+}
+
+input{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.area{
+  border: 1px solid white;
+  padding: 1%;
+  width: 30%;
+  margin: auto;
+}
+
+#flicker, #virus, #posture, #expression{
+  display: none;
 }
