@@ -1,6 +1,3 @@
-//this is the class for the whole face which contains a bunch of points
-
-
 var Face = function(_center, _gender){
   //center of position
   this.center = _center.copy();
@@ -10,9 +7,6 @@ var Face = function(_center, _gender){
   else {
     this.col = color(255, 80, 120, 255);
   }
-  console.log(this.center);
-
-  //TODO add eyebrows
 
   this.fpoints = [];
 
@@ -126,9 +120,11 @@ var Face = function(_center, _gender){
     scale(1.6);
     fill(100);
     stroke(this.col);
+
     for(var i = 0; i < this.fpoints.length; i++){
       this.fpoints[i].display();
     }
+
     var p1 = this.fpoints[Math.floor(Math.random()*this.fpoints.length)];
     var p2 = this.fpoints[Math.floor(Math.random()*this.fpoints.length)];
     line(p1.pos.x, p1.pos.y, p2.pos.x, p2.pos.y);
@@ -139,5 +135,10 @@ var Face = function(_center, _gender){
     pop();
   }
 
+  this.updateSpeed = function(speed){
+    for(var i = 0; i < this.fpoints.length; i++){
+      this.fpoints[i].v.mult(speed*1000);
+    }
+  }
 
 }

@@ -56,3 +56,11 @@ function keyTyped(){
       break;
   }
 }
+
+function expression_set(data){
+
+}
+
+function expression_updateSpeed(data){
+  current_face.updateSpeed(data);
+}

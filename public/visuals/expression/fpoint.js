@@ -9,6 +9,7 @@ var FPoint = function(_pos){
   this.inc = 0.01;
 
   this.v = createVector(random(-0.25, 0.25), random(-0.25, 0.25));
+  this.start_v = this.v.copy();
 
   this.step = this.pos.x;
   this.dir = 1;
@@ -21,6 +22,7 @@ var FPoint = function(_pos){
     else {
       this.pos = this.start_pos.copy();
       this.v = createVector(random(-0.25, 0.25), random(-0.25, 0.25));
+      this.start_v = this.v.copy();
     }
     //  this.pos.x += 0.01;
 

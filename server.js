@@ -68,4 +68,20 @@ io.sockets.on('connection', function(socket){
   socket.on('virus-update-speed', function(data){
     io.sockets.emit('virus-update-speed', data);
   });
+
+
+  //POSTURE CONTROL
+  socket.on('posture-set', function(data){
+    io.sockets.emit('posture-set', data);
+  });
+
+
+  //EXPRESSION CONTROL
+  socket.on('expression-update-speed', function(data){
+    io.sockets.emit('expression-update-speed', data);
+  });
+
+  socket.on('expression-set', function(data){
+    io.sockets.emit('expression-set', data);
+  });
 });

@@ -232,6 +232,35 @@ function displayLimbs(){
 	}
 }
 
+function posture_set(number){
+	var newPostureHim = specificPosture(currentPosture, "him");
+	var newPostureHer = specificPosture(currentPosture, "her");
+
+	for(var i = 0; i < him_adjuster.joints.length; i++){
+			him_adjuster.joints[i].initpos = newPostureHim[i].pos;
+			him_adjuster.joints[i].reset();
+			her_adjuster.joints[i].initpos = newPostureHer[i].pos;
+			her_adjuster.joints[i].reset();
+	}
+
+	him_adjuster.shadow(him.getPosition());
+	her_adjuster.shadow(her.getPosition());
+
+	for(var i = 0; i < her.joints.length; i++){
+		her.joints[i].initpos = newPostureHer[i].pos;
+		her.joints[i].reset();
+		him.joints[i].initpos = newPostureHim[i].pos;
+		him.joints[i].reset();
+	}
+
+	him.limbs.forEach(function(l){
+		l.wither();
+	});
+	her.limbs.forEach(function(l){
+		l.wither();
+	});
+}
+
 function specificPosture(_number, _gender){
 	var sp = [];
 

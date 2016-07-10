@@ -56,3 +56,17 @@ socket.on('virus-add-individual', function(data){
 socket.on('virus-update-speed', function(data){
   update_virus_speed(data);
 });
+
+//POSTURE CONTROL
+socket.on('posture-set', function(data){
+  posture_set(data);
+});
+
+//EXPRESSION CONTROL
+socket.on('expression-update-speed', function(data){
+  expression_updateSpeed(data);
+});
+
+socket.on('expression-set', function(data){
+  expression_set(data);
+});

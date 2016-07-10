@@ -61,7 +61,7 @@ function drawBorder(){
 	stroke(0);
 	noFill();
 	for(var i = 0; i < 4; i++){
-		rect(width*0.5, height*0.5, width*(0.999-i*0.005), height*(0.999-i*0.008));
+		rect(width*0.5, height*0.5, width*(0.999-i*0.008), height*(0.999-i*0.008));
 	}
 }
 
@@ -89,4 +89,10 @@ function add_virus(){
 		var p = getStartingPosition();
 
 	individuals.push(new Individual(r, p, population-1));
+}
+
+function update_virus_speed(data){
+	for(var i = 0; i < individuals.length; i++){
+		individuals[i].coeffVelocity = data;
+	}
 }
