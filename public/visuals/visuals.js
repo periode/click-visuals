@@ -1,25 +1,45 @@
 function setup(){
   var cnv = createCanvas(windowWidth, windowHeight);
+
   background(255);
-  if(state == 'virus'){
-    setup_virus();
+
+  switch(state){
+    case 'virus':
+      setup_virus();
+      break;
+    case 'posture':
+      setup_posture();
+      break;
+    case 'expression':
+      setup_expression();
+      break;
+    case 'flicker':
+      setup_flicker();
+      break;
+    default:
+      console.log('no state selected');
+      break;
   }
 
-  if(state == 'posture'){
-    setup_posture();
-  }
-
-  if(state == 'expression')
-    setup_expression();
 }
 
 function draw(){
-  if(state == 'virus')
-    draw_virus();
 
-  if(state == 'posture')
-    draw_posture();
-
-  if(state == 'expression')
-    draw_expression();
+    switch(state){
+      case 'virus':
+        draw_virus();
+        break;
+      case 'posture':
+        draw_posture();
+        break;
+      case 'expression':
+        draw_expression();
+        break;
+      case 'flicker':
+        draw_flicker();
+        break;
+      default:
+        console.log('no state selected');
+        break;
+    }
 }

@@ -123,6 +123,7 @@ var Face = function(_center, _gender){
   this.display = function(){
     push();
     translate(this.center.x, this.center.y);
+    scale(1.6);
     fill(100);
     stroke(this.col);
     for(var i = 0; i < this.fpoints.length; i++){

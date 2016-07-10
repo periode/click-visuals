@@ -1,21 +1,21 @@
-var population = 30;
+var population;
 var individuals = [];
 var squares = [];
 var canseek = false;
 
 function setup_virus(){
-	var cnv = createCanvas(windowWidth, windowHeight);
+	population = 0;
 
-	//create individuals
-	for(var i = 0; i < population; i++){
-		var r = 5+Math.random()*20;
-		if(i == 0)
-			var p = createVector(random(r, width-r), random(r, height-r));
-		else
-			var p = getStartingPosition();
-
-		individuals[i] = new Individual(r, p, i);
-	}
+	// //create individuals
+	// for(var i = 0; i < population; i++){
+	// 	var r = 5+Math.random()*20;
+	// 	if(i == 0)
+	// 		var p = createVector(random(r, width-r), random(r, height-r));
+	// 	else
+	// 		var p = getStartingPosition();
+	//
+	// 	individuals[i] = new Individual(r, p, i);
+	// }
 
 	rows = 20;
 	cols = 35;
@@ -81,6 +81,12 @@ function getStartingPosition(){
 		return getStartingPosition();
 }
 
-function keyPressed(){
-	canseek = !canseek;
+function add_virus(){
+	var r = 5+Math.random()*20;
+	if(i == 0)
+		var p = createVector(random(r, width-r), random(r, height-r));
+	else
+		var p = getStartingPosition();
+
+	individuals.push(new Individual(r, p, population-1));
 }

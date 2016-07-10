@@ -1,0 +1,48 @@
+body{
+  /*background-color: rgb(20, 20, 20);*/
+
+  font-family: Trebuchet MS;
+  /*color: rgb(50, 160, 100);*/
+  color: black;
+}
+video, canvas {
+  float: right;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-right: 10px;
+  position: absolute;
+  border: 1px solid grey;
+  padding: 2px;
+}
+
+.title{
+  width: 40%;
+  left: 30%;
+  text-align: center;
+  margin: auto;
+  font-size: 2em;
+}
+
+#profile{
+  float: right;
+  text-align: left;
+  width: 40%;
+  left: 30%;
+  margin-top: 10%;
+}
+
+.mugshot-holder{
+  /*background-color: white;*/
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  top: 70%;
+  left: 11%;
+}
+
+.mugshot{
+  border: 1px grey solid;
+  width: 48%;
+  height: 48%;
+  padding: 1px;
+}

@@ -1,14 +1,14 @@
 // this is where we have the main class
-
-var lface;
-
-
-var rface;
+var her;
+var him;
+var current_face;
 
 function setup_expression(){
-  lface = new Face(createVector(width*0.05, height*0.3), "her");
-  rface = new Face(createVector(width*0.55, height*0.3), "him");
+  her = new Face(createVector(width*0.175, height*0.1), "her");
+  him = new Face(createVector(width*0.175, height*0.1), "him");
   strokeCap(PROJECT);
+
+  current_face = her;
 }
 
 function draw_expression(){
@@ -16,14 +16,11 @@ function draw_expression(){
 
   update();
 
-  lface.display();
-
-  rface.display();
+  current_face.display();
 }
 
 function update(){
-  lface.update();
-  rface.update();
+  current_face.update();
 }
 
 function drawBackground(){
@@ -41,13 +38,11 @@ function drawBackground(){
 }
 
 function resetFPoints(){
-  lface.resetFPoints();
-  rface.resetFPoints();
+  current_face.resetFPoints();
 }
 
 function toggleMoveFPoints(){
-  lface.toggleMoveFPoints();
-  rface.toggleMoveFPoints();
+  current_face.toggleMoveFPoints();
 }
 
 function keyTyped(){

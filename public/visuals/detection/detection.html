@@ -8,38 +8,7 @@
   <!-- <script src="../../libs/stats.min.js"></script> -->
   <script src="profile.js"></script>
   <script src="detection.js"></script>
-
-
-  <style>
-  body{
-    font-family: Trebuchet MS;
-  }
-  video, canvas {
-    float: right;
-    margin-left: 10%;
-    margin-top: 10%;
-    margin-right: 10px;
-    position: absolute;
-    border: 1px solid black;
-    padding: 1%;
-  }
-
-  .title{
-    width: 40%;
-    left: 30%;
-    text-align: center;
-    margin: auto;
-    font-size: 2em;
-  }
-
-  #profile{
-    float: right;
-    text-align: left;
-    width: 40%;
-    left: 30%;
-    margin-top: 10%;
-  }
-  </style>
+  <link rel="stylesheet" type="text/css" href="detection.css">
 </head>
 <body>
   <div class="title">closest match</div><br>
@@ -99,6 +68,13 @@
       <video id="video" width="320" height="240" preload autoplay loop muted></video>
       <canvas id="canvas" width="320" height="240"></canvas>
     </div>
+  </div>
+
+  <div class="mugshot-holder">
+  <img class="mugshot" src="data/placeholder.png"></img>
+<img class="mugshot" src="data/placeholder.png"></img>
+    <img class="mugshot" src="data/placeholder.png"></img>
+  <img class="mugshot" src="data/placeholder.png"></img>
   </div>
 </body>
 </html>

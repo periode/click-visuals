@@ -33,7 +33,45 @@
 <br>
 <br>
 <br>
+<button onclick="switchScene('flicker')">switch to flicker</button><br>
+<br>
+number of columns:<br>
+1 <input id="slide" type="range"
+ min="1" max="10" step="1" value="1"
+ onchange="flicker_updateColumns(this.value)" />
+ 10<br>
+ <br>
+ number of rows:<br>
+ 1 <input id="slide" type="range"
+  min="1" max="1000" step="1" value="1"
+  onchange="flicker_updateRows(this.value)" />
+  1000<br>
+  <br>
+  frequency of black:<br>
+  0% <input id="slide" type="range"
+   min="0" max="1" step="0.025" value="0"
+   onchange="flicker_updateFrequency(this.value)" />
+   100%<br>
+   <br>
+   offset of black:<br>
+   0 <input id="slide" type="range"
+    min="0" max="1" step="0.01" value="0"
+    onchange="flicker_updateOffset(this.value)" />
+    80<br>
+<br>
+<br>
 <button onclick="switchScene('virus')">switch to virus</button><br>
+<br>
+add virus:<br>
+<input id="slide" type="button"
+ onclick="virus_addVirus()" />
+ <br>
+ virus speed:<br>
+ 0 <input id="slide" type="range"
+  min="0" max="10" step="0.01" value="0"
+  onchange="virus_updateSpeed(this.value)" />
+  10<br>
+<br>
 <button onclick="switchScene('posture')">switch to posture</button><br>
 <button onclick="switchScene('expression')">switch to expression</button>
 </body>

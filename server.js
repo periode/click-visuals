@@ -40,4 +40,32 @@ io.sockets.on('connection', function(socket){
     console.log('switching scene to', data);
     io.sockets.emit('switch-scene', data);
   });
+
+
+  //FLICKER CONTROL
+  socket.on('flicker-update-columns', function(data){
+    io.sockets.emit('flicker-update-columns', data);
+  });
+
+  socket.on('flicker-update-rows', function(data){
+    io.sockets.emit('flicker-update-rows', data);
+  });
+
+  socket.on('flicker-update-frequency', function(data){
+    io.sockets.emit('flicker-update-frequency', data);
+  });
+
+  socket.on('flicker-update-offset', function(data){
+    io.sockets.emit('flicker-update-offset', data);
+  });
+
+
+  //VIRUS CONTROL
+  socket.on('virus-add-individual', function(data){
+    io.sockets.emit('virus-add-individual', data);
+  });
+
+  socket.on('virus-update-speed', function(data){
+    io.sockets.emit('virus-update-speed', data);
+  });
 });
