@@ -34,10 +34,22 @@ input{
 .area{
   border: 1px solid white;
   padding: 1%;
-  width: 30%;
+  width: 80%;
   margin: auto;
 }
 
-#flicker, #virus, #posture, #expression{
+#flicker-1, #virus-1, #posture-1, #expression-1, #flicker-2, #virus-2, #posture-2, #expression-2{
   display: none;
+}
+
+#display-1{
+  position: absolute;
+  left: 2%;
+  width: 50%;
+}
+
+#display-2{
+  position: absolute;
+  right: 2%;
+  width: 50%;
 }

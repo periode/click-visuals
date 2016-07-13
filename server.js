@@ -37,7 +37,7 @@ io.sockets.on('connection', function(socket){
   console.log('new connection with ID',socket.id);
 
   socket.on('switch-scene', function(data){
-    console.log('switching scene to', data);
+    console.log('switching scene to', data.scene);
     io.sockets.emit('switch-scene', data);
   });
 
@@ -58,7 +58,6 @@ io.sockets.on('connection', function(socket){
   socket.on('flicker-update-offset', function(data){
     io.sockets.emit('flicker-update-offset', data);
   });
-
 
   //VIRUS CONTROL
   socket.on('virus-add-individual', function(data){

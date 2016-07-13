@@ -10,7 +10,7 @@
     <h3>< / cl!ck > conductor</h3>
     <br>
     <br>
-    <a href="visuals/visuals.html">visuals</a><br>
+    <a href="visuals/visuals.html">display 1</a> - <a href="visuals/visuals-2.html">display 2</a> <br>
     <a href="visuals/detection/detection.html">detection</a><br>
     <br>
     (open in new tab)
@@ -18,59 +18,123 @@
     <br>
     <br>
     <br>
-    <div class="area">
-      <button onclick="switchScene('flicker')">flicker</button><br>
-      <div class="control" id="flicker">
-        <hr><br>
-        number of columns: <span id="flicker_columns">1</span><br>
-        1 <input id="slide" type="range" min="1" max="10" step="1" value="1" onchange="flicker_updateColumns(this.value)" /> 10<br>
-        <hr><br>
-        number of rows: <span id="flicker_rows">1</span><br>
-        1 <input id="slide" type="range" min="1" max="1000" step="1" value="1" onchange="flicker_updateRows(this.value)" />1000<br>
-        <hr><br>
-        frequency of black: <span id="flicker_frequency">0</span><br>
-        0% <input id="slide" type="range" min="0" max="1" step="0.025" value="0" onchange="flicker_updateFrequency(this.value)" /> 100%<br>
-        <hr><br>
-        offset of black: <span id="flicker_offset">0</span><br>
-        0 <input id="slide" type="range" min="0" max="1" step="0.01" value="0" onchange="flicker_updateOffset(this.value)" />80<br>
+    <div id="display-1">
+      <div class="area">
+        <button onclick="switchScene('flicker', 1)">flicker</button><br>
+        <div class="control-1" id="flicker-1">
+          <hr><br>
+          number of columns: <span id="flicker_columns_1">1</span><br>
+          1 <input id="slide" type="range" min="1" max="10" step="1" value="1" onchange="flicker_updateColumns(this.value, 1)" /> 10<br>
+          <hr><br>
+          number of rows: <span id="flicker_rows_1">1</span><br>
+          1 <input id="slide" type="range" min="1" max="1000" step="1" value="1" onchange="flicker_updateRows(this.value, 1)" />1000<br>
+          <hr><br>
+          frequency of black: <span id="flicker_frequency_1">0</span><br>
+          0% <input id="slide" type="range" min="0" max="1" step="0.025" value="0" onchange="flicker_updateFrequency(this.value, 1)" /> 100%<br>
+          <hr><br>
+          offset of black: <span id="flicker_offset_1">0</span><br>
+          0 <input id="slide" type="range" min="0" max="1" step="0.01" value="0" onchange="flicker_updateOffset(this.value, 1)" />80<br>
+        </div>
+      </div>
+  <br>
+      <div class="area">
+        <button onclick="switchScene('virus', 1)">virus</button><br>
+        <div class="control-1" id="virus-1">
+          <hr><br>
+          total viruses: <span id="total_viruses_1">0</span><br>
+          <input id="pick_button" type="button"
+          onclick="virus_addVirus(1)" value="add"/>
+          <hr><br>
+          virus speed:<span id="virus_speed_1">0</span><br>
+          0 <input id="slide" type="range" min="0.1" max="1" step="0.01" value="0.1" onchange="virus_updateSpeed(this.value, 1)"/>10<br>
+          <br>
+        </div>
+      </div>
+  <br>
+      <div class="area">
+        <button onclick="switchScene('posture', 1)">posture</button><br>
+        <div class="control-1" id="posture-1">
+          <hr><br>
+          current posture: <span id="posture_state_1">1</span><br>
+          <input id="pick_button" type="button" onclick="posture_set(1, 1)" value="1"/>
+          <br>
+        </div>
+      </div>
+  <br>
+      <div class="area">
+        <button onclick="switchScene('expression', 1)">expression</button>
+        <div class="control-1" id="expression-1">
+          <hr><br>
+          distortion speed: <span id="expression_speed_1">1</span><br>
+          0.5 <input id="slide" type="range" min="0.2" max="2.5" step="0.01" value="1" onchange="ex_updateSpeed(this.value, 1)" />
+          10<br>
+          <hr><br>
+          current expression: <span id="expression_state_1">1</span><br>
+          <input id="pick_button" type="button" onclick="ex_set(1, 1)" value="1"/>
+          <br>
+        </div>
       </div>
     </div>
-<br>
-    <div class="area">
-      <button onclick="switchScene('virus')">virus</button><br>
-      <div class="control" id="virus">
-        <hr><br>
-        total viruses: <span id="total_viruses">0</span><br>
-        <input id="pick_button" type="button"
-        onclick="virus_addVirus()" value="add"/>
-        <hr><br>
-        virus speed:<br>
-        0 <input id="slide" type="range" min="0.1" max="1" step="0.01" value="0.1" onchange="virus_updateSpeed(this.value)"/>10<br>
-        <br>
+
+
+    <!-- DISPLAY 2 -->
+
+
+    <div id="display-2">
+      <div class="area">
+        <button onclick="switchScene('flicker', 2)">flicker</button><br>
+        <div class="control-2" id="flicker-2">
+          <hr><br>
+          number of columns: <span id="flicker_columns_2">1</span><br>
+          1 <input id="slide" type="range" min="1" max="10" step="1" value="1" onchange="flicker_updateColumns(this.value, 2)" /> 10<br>
+          <hr><br>
+          number of rows: <span id="flicker_rows_2">1</span><br>
+          1 <input id="slide" type="range" min="1" max="1000" step="1" value="1" onchange="flicker_updateRows(this.value, 2)" />1000<br>
+          <hr><br>
+          frequency of black: <span id="flicker_frequency_2">0</span><br>
+          0% <input id="slide" type="range" min="0" max="1" step="0.025" value="0" onchange="flicker_updateFrequency(this.value, 2)" /> 100%<br>
+          <hr><br>
+          offset of black: <span id="flicker_offset_2">0</span><br>
+          0 <input id="slide" type="range" min="0" max="1" step="0.01" value="0" onchange="flicker_updateOffset(this.value, 2)" />80<br>
+        </div>
       </div>
-    </div>
-<br>
-    <div class="area">
-      <button onclick="switchScene('posture')">posture</button><br>
-      <div class="control" id="posture">
-        <hr><br>
-        current posture: <span id="posture_state">1</span><br>
-        <input id="pick_button" type="button" onclick="posture_set(1)" value="1"/>
-        <br>
+  <br>
+      <div class="area">
+        <button onclick="switchScene('virus', 2)">virus</button><br>
+        <div class="control-2" id="virus-2">
+          <hr><br>
+          total viruses: <span id="total_viruses_2">0</span><br>
+          <input id="pick_button" type="button"
+          onclick="virus_addVirus(2)" value="add"/>
+          <hr><br>
+          virus speed:<br>
+          0 <input id="slide" type="range" min="0.1" max="1" step="0.01" value="0.1" onchange="virus_updateSpeed(this.value, 2)"/>10<br>
+          <br>
+        </div>
       </div>
-    </div>
-<br>
-    <div class="area">
-      <button onclick="switchScene('expression')">expression</button>
-      <div class="control" id="expression">
-        <hr><br>
-        distortion speed: <span id="expression_speed">1</span><br>
-        0.5 <input id="slide" type="range" min="0.2" max="2.5" step="0.01" value="1" onchange="ex_updateSpeed(this.value)" />
-        10<br>
-        <hr><br>
-        current expression: <span id="expression_state">1</span><br>
-        <input id="pick_button" type="button" onclick="ex_set(1)" value="1"/>
-        <br>
+  <br>
+      <div class="area">
+        <button onclick="switchScene('posture', 2)">posture</button><br>
+        <div class="control-2" id="posture-2">
+          <hr><br>
+          current posture: <span id="posture_state_2">1</span><br>
+          <input id="pick_button" type="button" onclick="posture_set(1, 2)" value="1"/>
+          <br>
+        </div>
+      </div>
+  <br>
+      <div class="area">
+        <button onclick="switchScene('expression', 2)">expression</button>
+        <div class="control-2" id="expression-2">
+          <hr><br>
+          distortion speed: <span id="expression_speed_2">1</span><br>
+          0.5 <input id="slide" type="range" min="0.2" max="2.5" step="0.01" value="1" onchange="ex_updateSpeed(this.value, 2)" />
+          10<br>
+          <hr><br>
+          current expression: <span id="expression_state_2">1</span><br>
+          <input id="pick_button" type="button" onclick="ex_set(1, 2)" value="1"/>
+          <br>
+        </div>
       </div>
     </div>
   </body>
