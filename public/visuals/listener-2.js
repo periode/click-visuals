@@ -49,10 +49,17 @@ socket.on('flicker-update-frequency', function(data){
     f_updateFrequency(data.freq);
 });
 
+socket.on('flicker-update-speed', function(data){
+  if(data.display == 2)
+    f_updateSpeed(data.speed);
+});
+
 socket.on('flicker-update-offset', function(data){
   if(data.display == 2)
     f_updateOffset(data.offset);
 });
+
+
 
 //VIRUS CONTROL
 socket.on('virus-add-individual', function(data){
@@ -65,11 +72,20 @@ socket.on('virus-update-speed-2', function(data){
     update_virus_speed(data.speed);
 });
 
+
+
 //POSTURE CONTROL
 socket.on('posture-set', function(data){
   if(data.display == 2)
     posture_set(data.posture);
 });
+
+socket.on('posture-reset', function(display){
+  if(display == 2)
+    posture_reset();
+});
+
+
 
 //EXPRESSION CONTROL
 socket.on('expression-update-speed', function(data){

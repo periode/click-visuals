@@ -3,9 +3,12 @@ var flicker_rows = 1000;
 
 var flicker_frequency;
 var flicker_offset;
+var flicker_speed;
 
 var xstep;
 var ystep;
+
+var chromatic = true;
 
 function setup_flicker(){
   frameRate(20);
@@ -28,8 +31,17 @@ function draw_flicker(){
 
   for(var x = 0; x < flicker_cols; x++){
     for(var y = 0; y < flicker_rows; y++){
-      fill(parseInt(noise(millis()*10000))*255);
-      if(random(1) < flicker_frequency)
+      if(!chromatic){
+        fill(parseInt(noise(millis()*10000))*255);
+      }else{
+        if(random(1) > 0.5){
+          fill(130, 63, 115);//purple
+        }else{
+          fill(189, 197, 197);//silver
+        }
+      }
+
+      if(noise(x + millis()*flicker_speed, y) < flicker_frequency)
         rect(x*xstep, y*ystep, xstep+1, ystep+1+parseInt(random(2))*flicker_offset);
     }
   }
@@ -55,6 +67,14 @@ function f_updateFrequency(val){
   flicker_frequency = val;
 }
 
+function f_updateSpeed(val){
+  flicker_speed = val;
+}
+
 function f_updateOffset(val){
   flicker_offset = val;
+}
+
+function f_toggleChromatic(){
+  chromatic = !chromatic;
 }

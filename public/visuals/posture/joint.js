@@ -1,5 +1,6 @@
 var Joint = function(_pos){
 	this.pos = _pos;
+	this.resetpos = _pos.copy();
 	this.initpos = _pos.copy();
 	this.targetpos = createVector(0, 0);
 	this.currentPos = _pos.copy();
@@ -52,8 +53,7 @@ var Joint = function(_pos){
 		this.velocity.mult(0);
 		this.acceleration.mult(0);
 		this.currentPos = createVector(this.pos.x, this.pos.y);
+		// this.initpos = this.resetpos.copy();
 		this.lerpVal = 0;
-		console.log(this.lerpVal);
-		console.log(this.currentPos);
 	}
 }

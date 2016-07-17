@@ -11,6 +11,7 @@ var FLine = function(_fp1, _fp2){
 
   this.display = function(){
     strokeWeight(2);
+    strokeWeight(random(2, 10));
     var r1 = Math.random()*0.5;
     for(var i = 0; i < 4; i++){
 

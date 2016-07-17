@@ -55,9 +55,18 @@ io.sockets.on('connection', function(socket){
     io.sockets.emit('flicker-update-frequency', data);
   });
 
+  socket.on('flicker-update-speed', function(data){
+    io.sockets.emit('flicker-update-speed', data);
+  });
+
   socket.on('flicker-update-offset', function(data){
     io.sockets.emit('flicker-update-offset', data);
   });
+
+  socket.on('flicker-toggle-chromatic', function(data){
+    io.sockets.emit('flicker-toggle-chromatic', data);
+  });
+
 
   //VIRUS CONTROL
   socket.on('virus-add-individual', function(data){
@@ -74,6 +83,18 @@ io.sockets.on('connection', function(socket){
     io.sockets.emit('posture-set', data);
   });
 
+  socket.on('posture-reset', function(data){
+    io.sockets.emit('posture-reset', data);
+  });
+
+  socket.on('posture-unshadow', function(data){
+    io.sockets.emit('posture-unshadow', data);
+  });
+
+  socket.on('posture-dance', function(data){
+    io.sockets.emit('posture-dance', data);
+  });
+
 
   //EXPRESSION CONTROL
   socket.on('expression-update-speed', function(data){
@@ -82,5 +103,9 @@ io.sockets.on('connection', function(socket){
 
   socket.on('expression-set', function(data){
     io.sockets.emit('expression-set', data);
+  });
+
+  socket.on('expression-toggle', function(data){
+    io.sockets.emit('expression-toggle', data);
   });
 });

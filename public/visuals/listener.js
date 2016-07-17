@@ -34,6 +34,7 @@ socket.on('switch-scene', function(data){
 });
 
 
+
 //FLICKER CONTROL
 socket.on('flicker-update-columns', function(data){
   if(data.display == 1)
@@ -50,10 +51,21 @@ socket.on('flicker-update-frequency', function(data){
     f_updateFrequency(data.freq);
 });
 
+socket.on('flicker-update-speed', function(data){
+  if(data.display == 1)
+    f_updateSpeed(data.speed);
+});
+
 socket.on('flicker-update-offset', function(data){
   if(data.display == 1)
     f_updateOffset(data.offset);
 });
+
+socket.on('flicker-toggle-chromatic', function(data){
+  if(data == 1)
+    f_toggleChromatic();
+});
+
 
 //VIRUS CONTROL
 socket.on('virus-add-individual', function(data){
@@ -66,11 +78,29 @@ socket.on('virus-update-speed', function(data){
     update_virus_speed(data.speed);
 });
 
+
 //POSTURE CONTROL
 socket.on('posture-set', function(data){
   if(data.display == 1)
     posture_set(data.posture);
 });
+
+socket.on('posture-reset', function(display){
+  console.log('reset');
+  if(display == 1)
+    posture_reset();
+});
+
+socket.on('posture-unshadow', function(display){
+  if(display == 1)
+    posture_unshadow();
+});
+
+socket.on('posture-dance', function(display){
+  if(display == 1)
+    posture_dance();
+});
+
 
 //EXPRESSION CONTROL
 socket.on('expression-update-speed', function(data){
@@ -81,4 +111,9 @@ socket.on('expression-update-speed', function(data){
 socket.on('expression-set', function(data){
   if(data.display == 1)
     expression_set(data.expression);
+});
+
+socket.on('expression-toggle', function(data){
+  if(data == 1)
+    toggleMoveFPoints();
 });

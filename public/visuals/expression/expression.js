@@ -24,15 +24,15 @@ function update(){
 }
 
 function drawBackground(){
-  background(0);
-  stroke(30);
+  background(255);
+  stroke(100);
   for(var i = 0; i < height; i+= 20){
-    if(noise(i) > 0.3)
+    if(noise(i) > 0.4)
     line(0, i, width, i);
   }
 
   for(var i = 0; i < width; i+= 20){
-    if(noise(i) > 0.3)
+    if(noise(i) > 0.4)
       line(i, 0, i, height);
   }
 }
@@ -43,6 +43,7 @@ function resetFPoints(){
 
 function toggleMoveFPoints(){
   current_face.toggleMoveFPoints();
+  setTimeout(resetFPoints, 3000);
 }
 
 function keyTyped(){

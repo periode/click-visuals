@@ -233,13 +233,14 @@ function displayLimbs(){
 }
 
 function posture_set(number){
+	currentPosture = number;
 	var newPostureHim = specificPosture(currentPosture, "him");
 	var newPostureHer = specificPosture(currentPosture, "her");
 
 	for(var i = 0; i < him_adjuster.joints.length; i++){
-			him_adjuster.joints[i].initpos = newPostureHim[i].pos;
+			him_adjuster.joints[i].initpos = newPostureHim[i].pos.copy();
 			him_adjuster.joints[i].reset();
-			her_adjuster.joints[i].initpos = newPostureHer[i].pos;
+			her_adjuster.joints[i].initpos = newPostureHer[i].pos.copy();
 			her_adjuster.joints[i].reset();
 	}
 
@@ -247,25 +248,55 @@ function posture_set(number){
 	her_adjuster.shadow(her.getPosition());
 
 	for(var i = 0; i < her.joints.length; i++){
-		her.joints[i].initpos = newPostureHer[i].pos;
+		her.joints[i].initpos = newPostureHer[i].pos.copy();
 		her.joints[i].reset();
-		him.joints[i].initpos = newPostureHim[i].pos;
+		him.joints[i].initpos = newPostureHim[i].pos.copy();
 		him.joints[i].reset();
 	}
 
 	him.limbs.forEach(function(l){
 		l.wither();
 	});
+
 	her.limbs.forEach(function(l){
 		l.wither();
 	});
+}
+
+function posture_reset(){
+	her.joints.forEach(function(j){
+		j.reset();
+	});
+	him.joints.forEach(function(j){
+		j.reset();
+	});
+}
+
+function posture_dance(){
+	var f = createVector(random(-moveCoeff, moveCoeff), random(-moveCoeff, moveCoeff));
+	var randomPicked = Math.floor(random(him.joints.length));
+	him.joints[randomPicked].move(f);
+	her.joints[randomPicked].move(f);
+}
+
+function posture_unshadow(){
+	him_adjuster.unshadow();
+	her_adjuster.unshadow();
+
+	setTimeout(function(){
+	him.limbs.forEach(function(l){
+		l.wither();
+	});
+	her.limbs.forEach(function(l){
+		l.wither();
+	});
+	}, 2000);
 }
 
 function specificPosture(_number, _gender){
 	var sp = [];
 
 	if(_number == 0){
-		console.log('hello number 0');
 		var j_head = new Joint(createVector(width*0.5, height*0.1));
 		sp.push(j_head);
 		var j_torso_top = new Joint(createVector(width*0.5, height*0.2));

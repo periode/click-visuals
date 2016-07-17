@@ -46,12 +46,24 @@ function flicker_updateFrequency(val, display){
   socket.emit('flicker-update-frequency', data);
 }
 
+function flicker_updateSpeed(val, display){
+  var data = {"speed":val, "display":display};
+  var id = 'flicker_speed_'+display.toString();
+
+  document.getElementById(id).innerHTML = val;
+  socket.emit('flicker-update-speed', data);
+}
+
 function flicker_updateOffset(val, display){
   var data = {"offset":val, "display":display};
   var id = 'flicker_offset_'+display.toString();
 
   document.getElementById(id).innerHTML = val;
   socket.emit('flicker-update-offset', data);
+}
+
+function flicker_toggleChromatic(display){
+  socket.emit('flciker-toggle-chromatic', display);
 }
 
 //VIRUS CONTROL
@@ -92,6 +104,17 @@ function posture_set(val, display){
   socket.emit('posture-set', data);
 }
 
+function posture_reset(display){
+  socket.emit('posture-reset', display);
+}
+
+function posture_unshadow(display){
+  socket.emit('posture-unshadow', display);
+}
+
+function posture_dance(display){
+  socket.emit('posture-dance', display);
+}
 
 //EXPRESSION CONTROL
 function ex_updateSpeed(val, display){
@@ -108,4 +131,8 @@ function ex_set(val, display){
 
   document.getElementById(id).innerHTML = val;
   socket.emit('expression-set', data);
+}
+
+function ex_toggle(display){
+  socket.emit('expression-toggle', display);
 }

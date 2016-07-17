@@ -32,10 +32,29 @@
           frequency of black: <span id="flicker_frequency_1">0</span><br>
           0% <input id="slide" type="range" min="0" max="1" step="0.025" value="0" onchange="flicker_updateFrequency(this.value, 1)" /> 100%<br>
           <hr><br>
+          speed of black: <span id="flicker_speed_1">0</span><br>
+          0% <input id="slide" type="range" min="0.00001" max="0.01" step="0.00001" value="0" onchange="flicker_updateSpeed(this.value, 1)" /> 100%<br>
+          <hr><br>
           offset of black: <span id="flicker_offset_1">0</span><br>
           0 <input id="slide" type="range" min="0" max="1" step="0.01" value="0" onchange="flicker_updateOffset(this.value, 1)" />80<br>
+          <input id="chromatic_button" type="button" onclick="flicker_toggleChromatic(1)" value="toggle chromatic"/>
         </div>
       </div>
+  <br>
+  <div class="area">
+    <button onclick="switchScene('expression', 1)">expression</button>
+    <div class="control-1" id="expression-1">
+      <hr><br>
+      distortion speed: <span id="expression_speed_1">1</span><br>
+      0.5 <input id="slide" type="range" min="0.2" max="2.5" step="0.01" value="1" onchange="ex_updateSpeed(this.value, 1)" />
+      10<br>
+      <hr><br>
+      current expression: <span id="expression_state_1">1</span><br>
+      <input id="pick_button" type="button" onclick="ex_set(1, 1)" value="1"/><br>
+      <input id="pick_button" type="button" onclick="ex_toggle(1)" value="toggle moving"/>
+      <br>
+    </div>
+  </div>
   <br>
       <div class="area">
         <button onclick="switchScene('virus', 1)">virus</button><br>
@@ -57,23 +76,18 @@
           <hr><br>
           current posture: <span id="posture_state_1">1</span><br>
           <input id="pick_button" type="button" onclick="posture_set(1, 1)" value="1"/>
+          <input id="pick_button" type="button" onclick="posture_set(2, 1)" value="2"/>
+          <input id="pick_button" type="button" onclick="posture_set(3, 1)" value="3"/>
+          <input id="pick_button" type="button" onclick="posture_set(4, 1)" value="4"/>
+          <input id="pick_button" type="button" onclick="posture_set(5, 1)" value="5"/><br>
+          <input id="reset_button" type="button" onclick="posture_reset(1)" value="reset"><br>
+          <input id="unshadow_button" type="button" onclick="posture_unshadow(1)" value="unshadow">
+          <input id="dance_button" type="button" onclick="posture_dance(1)" value="dance">
           <br>
         </div>
       </div>
   <br>
-      <div class="area">
-        <button onclick="switchScene('expression', 1)">expression</button>
-        <div class="control-1" id="expression-1">
-          <hr><br>
-          distortion speed: <span id="expression_speed_1">1</span><br>
-          0.5 <input id="slide" type="range" min="0.2" max="2.5" step="0.01" value="1" onchange="ex_updateSpeed(this.value, 1)" />
-          10<br>
-          <hr><br>
-          current expression: <span id="expression_state_1">1</span><br>
-          <input id="pick_button" type="button" onclick="ex_set(1, 1)" value="1"/>
-          <br>
-        </div>
-      </div>
+
     </div>
 
 
@@ -94,11 +108,28 @@
           frequency of black: <span id="flicker_frequency_2">0</span><br>
           0% <input id="slide" type="range" min="0" max="1" step="0.025" value="0" onchange="flicker_updateFrequency(this.value, 2)" /> 100%<br>
           <hr><br>
+          speed of black: <span id="flicker_speed_2">0</span><br>
+          0% <input id="slide" type="range" min="0.00001" max="0.01" step="0.00001" value="0" onchange="flicker_updateSpeed(this.value, 2)" /> 100%<br>
+          <hr><br>
           offset of black: <span id="flicker_offset_2">0</span><br>
           0 <input id="slide" type="range" min="0" max="1" step="0.01" value="0" onchange="flicker_updateOffset(this.value, 2)" />80<br>
         </div>
       </div>
   <br>
+  <div class="area">
+    <button onclick="switchScene('expression', 2)">expression</button>
+    <div class="control-2" id="expression-2">
+      <hr><br>
+      distortion speed: <span id="expression_speed_2">1</span><br>
+      0.5 <input id="slide" type="range" min="0.2" max="2.5" step="0.01" value="1" onchange="ex_updateSpeed(this.value, 2)" />
+      10<br>
+      <hr><br>
+      current expression: <span id="expression_state_2">1</span><br>
+      <input id="pick_button" type="button" onclick="ex_set(1, 2)" value="1"/><br>
+      <input id="pick_button" type="button" onclick="ex_toggle(2)" value="toggle moving"/>
+      <br>
+    </div>
+  </div><br>
       <div class="area">
         <button onclick="switchScene('virus', 2)">virus</button><br>
         <div class="control-2" id="virus-2">
@@ -119,23 +150,16 @@
           <hr><br>
           current posture: <span id="posture_state_2">1</span><br>
           <input id="pick_button" type="button" onclick="posture_set(1, 2)" value="1"/>
+          <input id="pick_button" type="button" onclick="posture_set(2, 2)" value="2"/>
+          <input id="pick_button" type="button" onclick="posture_set(3, 2)" value="3"/>
+          <input id="pick_button" type="button" onclick="posture_set(4, 2)" value="4"/>
+          <input id="pick_button" type="button" onclick="posture_set(5, 2)" value="5"/><br>
+          <input id="leave_button" type="button" onclick="posture_reset(2)" value="reset">
           <br>
         </div>
       </div>
   <br>
-      <div class="area">
-        <button onclick="switchScene('expression', 2)">expression</button>
-        <div class="control-2" id="expression-2">
-          <hr><br>
-          distortion speed: <span id="expression_speed_2">1</span><br>
-          0.5 <input id="slide" type="range" min="0.2" max="2.5" step="0.01" value="1" onchange="ex_updateSpeed(this.value, 2)" />
-          10<br>
-          <hr><br>
-          current expression: <span id="expression_state_2">1</span><br>
-          <input id="pick_button" type="button" onclick="ex_set(1, 2)" value="1"/>
-          <br>
-        </div>
-      </div>
+
     </div>
   </body>
 </html>

@@ -120,6 +120,7 @@ var Face = function(_center, _gender){
     scale(1.6);
     fill(100);
     stroke(this.col);
+    strokeWeight(1);
 
     for(var i = 0; i < this.fpoints.length; i++){
       this.fpoints[i].display();
