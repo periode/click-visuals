@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:2046');
+var socket = io.connect('http://192.168.0.23');
 
 var virus = false;
 var posture = false;

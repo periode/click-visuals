@@ -8,7 +8,7 @@ var flicker_speed;
 var xstep;
 var ystep;
 
-var chromatic = true;
+var chromatic = false;
 
 function setup_flicker(){
   frameRate(20);

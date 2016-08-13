@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:2046');
+var socket = io.connect('http://192.168.0.23');
 
 socket.on('connect', function(){
   console.log('socket connected!');
@@ -63,7 +63,7 @@ function flicker_updateOffset(val, display){
 }
 
 function flicker_toggleChromatic(display){
-  socket.emit('flciker-toggle-chromatic', display);
+  socket.emit('flicker-toggle-chromatic', display);
 }
 
 //VIRUS CONTROL

@@ -10,14 +10,14 @@ var Profile = function(
   _degree,
   _blurb,
   _imagepath){
-    
+
   this.name = _name;
   this.gender = _gender;
   this.age = _age;
   this.character = _character;
 
-  this.interests = _interests.copy();
-  this.sexual_orientation = _sexual_orientation;
+  this.interests = _interests;
+  this.sexual_orientation = _orientation;
 
   this.origin = _origin;
 

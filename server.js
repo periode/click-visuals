@@ -3,7 +3,7 @@ var fs = require('fs');
 var url = require('url');
 var body = require('body-parser');
 
-var port = 2046;
+var port = 80;
 
 function handler(req, res, err){
   var parsed_url = url.parse(req.url, true);
@@ -65,6 +65,7 @@ io.sockets.on('connection', function(socket){
 
   socket.on('flicker-toggle-chromatic', function(data){
     io.sockets.emit('flicker-toggle-chromatic', data);
+    console.log('yoo');
   });
 
 
