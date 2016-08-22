@@ -21,5 +21,5 @@ function parse(text){
 }
 
 window.setTimeout(function(){
-  $("iframe#twitter-widget-0").contents().find('head').append('<style>img.Avatar{display:none !important;}body{color:black;}span.Identity-Name{display:none; !important}div.timeline-Tweet-brand{display:none;}div.Icon{display:none;}footer.timeline-footer{display:none;}h1.timeline-Header-title{text-align:center;color: black;}</style>');
+  $("iframe#twitter-widget-0").contents().find('head').append('<style>img.Avatar{display:none !important;}div.MediaCard-media, div.timeline-Tweet-retweetCredit {display:none;} body{color:black;}span.Identity-Name{display:none; !important}div.timeline-Tweet-brand{display:none;}div.Icon{display:none;}footer.timeline-footer{display:none;}h1.timeline-Header-title{text-align:center;color: black;}</style>');
 }, 1000);

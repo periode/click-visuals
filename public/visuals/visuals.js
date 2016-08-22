@@ -38,6 +38,9 @@ function draw(){
       case 'flicker':
         draw_flicker();
         break;
+      case 'transition':
+        draw_transition();
+        break;
       default:
         console.log('no state selected');
         break;

@@ -1,4 +1,4 @@
-var socket = io.connect('http://192.168.0.23');
+var socket = io.connect('localhost');
 
 var virus = false;
 var posture = false;
@@ -24,6 +24,9 @@ socket.on('switch-scene', function(data){
         break;
       case 'flicker':
         setup_flicker();
+        break;
+      case 'transition':
+        setup_transition();
         break;
       default:
         console.log('no state selected');
