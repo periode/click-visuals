@@ -41,6 +41,10 @@ io.sockets.on('connection', function(socket){
     io.sockets.emit('switch-scene', data);
   });
 
+  //SWIPE CONTROL
+  socket.on('swipe', function(data){
+    io.sockets.emit('swipe', data);
+  });
 
   //FLICKER CONTROL
   socket.on('flicker-update-columns', function(data){

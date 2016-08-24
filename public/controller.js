@@ -21,6 +21,12 @@ function switchScene(scene, display){
 }
 
 
+//TRANSITION CONTROL
+function swipe(display){
+  socket.emit('swipe', display);
+}
+
+
 //FLICKER CONTROL
 function flicker_updateColumns(val, display){
   var data = {"columns":val, "display":display};

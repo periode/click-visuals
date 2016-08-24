@@ -36,7 +36,11 @@ socket.on('switch-scene', function(data){
 
 });
 
-
+//SWIPE CONTROL
+socket.on('swipe', function(data){
+  if(data == 1)
+    t_swipe();
+});
 
 //FLICKER CONTROL
 socket.on('flicker-update-columns', function(data){
