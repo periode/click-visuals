@@ -37,8 +37,8 @@ socket.on('switch-scene', function(data){
 
 //SWIPE CONTROL
 socket.on('swipe', function(data){
-  if(data == 2)
-    t_swipe();
+  if(data.display == 2)
+    t_swipe(data.index);
 });
 
 
@@ -68,6 +68,11 @@ socket.on('flicker-update-offset', function(data){
     f_updateOffset(data.offset);
 });
 
+socket.on('flicker-toggle-chromatic', function(data){
+  if(data == 2)
+    f_toggleChromatic();
+});
+
 
 
 //VIRUS CONTROL
@@ -92,6 +97,16 @@ socket.on('posture-set', function(data){
 socket.on('posture-reset', function(display){
   if(display == 2)
     posture_reset();
+});
+
+socket.on('posture-unshadow', function(display){
+  if(display == 2)
+    posture_unshadow();
+});
+
+socket.on('posture-dance', function(display){
+  if(display == 2)
+    posture_dance();
 });
 
 

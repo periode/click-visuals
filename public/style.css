@@ -31,6 +31,13 @@ input{
   margin-bottom: 30px;
 }
 
+.btn{
+  padding: 0 20px;
+  font-size: 2.5em;
+  width: 30%;
+  line-height: 200px;
+}
+
 .area{
   border: 1px solid white;
   padding: 1%;

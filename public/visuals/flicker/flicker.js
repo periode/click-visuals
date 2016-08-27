@@ -1,5 +1,5 @@
-var flicker_cols = 1;
-var flicker_rows = 1000;
+var flicker_cols;
+var flicker_rows;
 
 var flicker_frequency;
 var flicker_offset;
@@ -14,7 +14,7 @@ function setup_flicker(){
   frameRate(20);
 
   flicker_cols = 1;
-  flicker_rows = 1;
+  flicker_rows = 500;
 
   xstep = width/flicker_cols;
   ystep = height/flicker_rows;
