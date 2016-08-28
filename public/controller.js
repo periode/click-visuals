@@ -10,13 +10,24 @@ function switchScene(scene, display){
   var data = {"scene":scene, "display":display};
   socket.emit('switch-scene', data);
 
-  var cl = 'control-'+display.toString();
+  var cl = 'control-1';
   var ctrl = document.getElementsByClassName(cl);
   for(var i = 0; i < ctrl.length; i++){
     ctrl[i].style.display = 'none';
   }
-  var id = scene+'-'+display.toString();
-  console.log(id);
+
+  var cl = 'control-2';
+  var ctrl = document.getElementsByClassName(cl);
+  for(var i = 0; i < ctrl.length; i++){
+    ctrl[i].style.display = 'none';
+  }
+
+
+  var id = scene+'-1';
+  // console.log(id);
+  document.getElementById(id).style.display = 'block';
+  var id = scene+'-2';
+  // console.log(id);
   document.getElementById(id).style.display = 'block';
 }
 

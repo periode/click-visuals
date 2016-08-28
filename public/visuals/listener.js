@@ -8,7 +8,6 @@ socket.on('connect', function(){
 });
 
 socket.on('switch-scene', function(data){
-  if(data.display == 1){
     state = data.scene;
     console.log('switching scene to',data.scene);
 
@@ -32,8 +31,6 @@ socket.on('switch-scene', function(data){
         console.log('no state selected');
         break;
     }
-  }
-
 });
 
 //SWIPE CONTROL
