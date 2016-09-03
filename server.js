@@ -42,6 +42,10 @@ io.sockets.on('connection', function(socket){
   });
 
   //SWIPE CONTROL
+  socket.on('title', function(data){
+    io.sockets.emit('title', data);
+  });
+
   socket.on('swipe', function(data){
     io.sockets.emit('swipe', data);
   });

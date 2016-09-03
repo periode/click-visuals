@@ -4,11 +4,9 @@ var him;
 var current_face;
 
 function setup_expression(){
-  her = new Face(createVector(width*0.175, height*0.1), "her");
-  him = new Face(createVector(width*0.175, height*0.1), "him");
   strokeCap(PROJECT);
 
-  current_face = her;
+  current_face = new Face(createVector(width*0.175, height*0.1), gender);
 }
 
 function draw_expression(){

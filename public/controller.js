@@ -33,8 +33,13 @@ function switchScene(scene, display){
 
 
 //TRANSITION CONTROL
-function swipe(val, display){
+function set_title(val, display){
   var data = {"index":val, "display":display}
+  socket.emit('title', data);
+}
+
+function swipe(val, display, direction){
+  var data = {"index":val, "display":display, "direction":direction}
   socket.emit('swipe', data);
 }
 

@@ -89,6 +89,7 @@ function draw_posture(){
 	noCursor();
 	background(250);
 	drawLines();
+	strokeCap(ROUND);
 	her_adjuster.display();
 	him_adjuster.display();
 	her.display();

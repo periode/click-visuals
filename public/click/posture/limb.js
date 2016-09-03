@@ -19,7 +19,7 @@ var Limb = function(_joint1, _joint2){
 	}
 
 	this.display_shadow = function(){
-		strokeCap(PROJECT);
+		strokeCap(ROUND);
 		strokeWeight(40);
 		stroke(100, 100+noise(millis()*0.001, this.pos1.x)*155);
 		line(this.pos1.x, this.pos1.y, this.pos2.x, this.pos2.y);

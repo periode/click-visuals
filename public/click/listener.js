@@ -34,88 +34,95 @@ socket.on('switch-scene', function(data){
 });
 
 //SWIPE CONTROL
-socket.on('swipe', function(data){
-  if(data.display == 2)
-    t_swipe(data.index);
+socket.on('title', function(data){
+  if(data.display == 1)
+    t_title(data.index);
 });
 
+socket.on('swipe', function(data){
+  if(data.display == 1)
+    t_swipe(data.index, data.direction);
+});
 
 //FLICKER CONTROL
 socket.on('flicker-update-columns', function(data){
-  if(data.display == 2)
+  if(data.display == 1)
     f_updateColumns(data.columns);
 });
 
 socket.on('flicker-update-rows', function(data){
-  if(data.display == 2)
+  if(data.display == 1)
     f_updateRows(data.rows);
 });
 
 socket.on('flicker-update-frequency', function(data){
-  if(data.display == 2)
+  if(data.display == 1)
     f_updateFrequency(data.freq);
 });
 
 socket.on('flicker-update-speed', function(data){
-  if(data.display == 2)
+  if(data.display == 1)
     f_updateSpeed(data.speed);
 });
 
 socket.on('flicker-update-offset', function(data){
-  if(data.display == 2)
+  if(data.display == 1)
     f_updateOffset(data.offset);
 });
 
 socket.on('flicker-toggle-chromatic', function(data){
-  if(data == 2)
+  if(data == 1)
     f_toggleChromatic();
 });
 
 
-
 //VIRUS CONTROL
 socket.on('virus-add-individual', function(data){
-  if(data == 2)
+  if(data == 1)
     add_virus();
 });
 
-socket.on('virus-update-speed-2', function(data){
-  if(data.display == 2)
+socket.on('virus-update-speed', function(data){
+  if(data.display == 1)
     update_virus_speed(data.speed);
 });
 
 
-
 //POSTURE CONTROL
 socket.on('posture-set', function(data){
-  if(data.display == 2)
+  if(data.display == 1)
     posture_set(data.posture);
 });
 
 socket.on('posture-reset', function(display){
-  if(display == 2)
+  console.log('reset');
+  if(display == 1)
     posture_reset();
 });
 
 socket.on('posture-unshadow', function(display){
-  if(display == 2)
+  if(display == 1)
     posture_unshadow();
 });
 
 socket.on('posture-dance', function(display){
-  if(display == 2)
+  if(display == 1)
     posture_dance();
 });
 
 
-
 //EXPRESSION CONTROL
 socket.on('expression-update-speed', function(data){
-  if(data.display == 2)
+  if(data.display == 1)
     expression_updateSpeed(data.speed);
 });
 
 socket.on('expression-set', function(data){
-  if(data.display == 2)
+  if(data.display == 1)
     expression_set(data.expression);
+});
+
+socket.on('expression-toggle', function(data){
+  if(data == 1)
+    toggleMoveFPoints();
 });
