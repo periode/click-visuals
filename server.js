@@ -96,6 +96,10 @@ io.sockets.on('connection', function(socket){
     io.sockets.emit('posture-reset', data);
   });
 
+  socket.on('posture-shadow', function(data){
+    io.sockets.emit('posture-shadow', data);
+  });
+
   socket.on('posture-unshadow', function(data){
     io.sockets.emit('posture-unshadow', data);
   });

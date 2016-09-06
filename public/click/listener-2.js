@@ -102,6 +102,11 @@ socket.on('posture-reset', function(display){
     posture_reset();
 });
 
+socket.on('posture-shadow', function(display){
+  if(display == 2)
+    posture_shadow();
+});
+
 socket.on('posture-unshadow', function(display){
   if(display == 2)
     posture_unshadow();

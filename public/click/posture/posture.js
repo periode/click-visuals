@@ -106,120 +106,120 @@ function drawLines(){
 		line(0, height-i*i, width, height-i*i);
 	}
 }
-
-function keyTyped(){
-	if(key == 'f' || key == 'F'){
-		var f = createVector(random(-moveCoeff, moveCoeff), random(-moveCoeff, moveCoeff));
-		var randomPicked = Math.floor(random(him.joints.length));
-		him.joints[randomPicked].move(f);
-	}
-
-	if(key == 'g' || key == 'G'){
-		var f = createVector(random(-moveCoeff, moveCoeff), random(-moveCoeff, moveCoeff));
-		var randomPicked = Math.floor(random(him.joints.length));
-		him.joints[randomPicked].move(f);
-		her.joints[randomPicked].move(f);
-	}
-
-	if(key == 'h' || key == 'H'){
-		var f = createVector(random(-moveCoeff, moveCoeff), random(-moveCoeff, moveCoeff));
-		var randomPicked = Math.floor(random(her.joints.length));
-		her.joints[randomPicked].move(f);
-	}
-
-	if(key == 's' || key == 'S'){
-		var newPostureHim = specificPosture(currentPosture, "him");
-		var newPostureHer = specificPosture(currentPosture, "her");
-
-		for(var i = 0; i < him_adjuster.joints.length; i++){
-				him_adjuster.joints[i].initpos = newPostureHim[i].pos;
-				him_adjuster.joints[i].reset();
-				her_adjuster.joints[i].initpos = newPostureHer[i].pos;
-				her_adjuster.joints[i].reset();
-		}
-
-		him_adjuster.shadow(him.getPosition());
-		her_adjuster.shadow(her.getPosition());
-
-		for(var i = 0; i < her.joints.length; i++){
-			her.joints[i].initpos = newPostureHer[i].pos;
-			her.joints[i].reset();
-			him.joints[i].initpos = newPostureHim[i].pos;
-			him.joints[i].reset();
-		}
-
-		him.limbs.forEach(function(l){
-			l.wither();
-		});
-		her.limbs.forEach(function(l){
-			l.wither();
-		});
-	}
-
-	if(key == '0')
-		currentPosture = 0;
-	if(key == '1')
-		currentPosture = 1;
-	if(key == '2')
-		currentPosture = 2;
-	if(key == '3')
-		currentPosture = 3;
-	if(key == '4')
-		currentPosture = 4;
-		if(key == '5')
-			currentPosture = 5;
-
-	if(key == 'u' || key == 'U'){
-		him_adjuster.unshadow();
-		her_adjuster.unshadow();
-
-		setTimeout(function(){
-		him.limbs.forEach(function(l){
-			l.wither();
-		});
-		her.limbs.forEach(function(l){
-			l.wither();
-		});
-		}, 2000);
-
-	}
-
-	if(key == 'r' || key == 'R'){
-		her.joints.forEach(function(j){
-			j.reset();
-		});
-		him.joints.forEach(function(j){
-			j.reset();
-		});
-	}
-
-	if(key == 'w' || key == 'W'){
-		him.limbs.forEach(function(l){
-			l.wither();
-		});
-		her.limbs.forEach(function(l){
-			l.wither();
-		});
-	}
-
-	if(key == '['){
-		moveCoeff *= 0.9;
-	}
-
-	if(key == ']'){
-		moveCoeff *= 1.1;
-	}
-
-	if(key == '\\'){
-		him_adjuster.slowDown();
-		her_adjuster.slowDown();
-	}
-
-	if(key == 'z')
-	canFade = true;
-
-	return false;
-}
+//
+// function keyTyped(){
+// 	if(key == 'f' || key == 'F'){
+// 		var f = createVector(random(-moveCoeff, moveCoeff), random(-moveCoeff, moveCoeff));
+// 		var randomPicked = Math.floor(random(him.joints.length));
+// 		him.joints[randomPicked].move(f);
+// 	}
+//
+// 	if(key == 'g' || key == 'G'){
+// 		var f = createVector(random(-moveCoeff, moveCoeff), random(-moveCoeff, moveCoeff));
+// 		var randomPicked = Math.floor(random(him.joints.length));
+// 		him.joints[randomPicked].move(f);
+// 		her.joints[randomPicked].move(f);
+// 	}
+//
+// 	if(key == 'h' || key == 'H'){
+// 		var f = createVector(random(-moveCoeff, moveCoeff), random(-moveCoeff, moveCoeff));
+// 		var randomPicked = Math.floor(random(her.joints.length));
+// 		her.joints[randomPicked].move(f);
+// 	}
+//
+// 	if(key == 's' || key == 'S'){
+// 		var newPostureHim = specificPosture(currentPosture, "him");
+// 		var newPostureHer = specificPosture(currentPosture, "her");
+//
+// 		for(var i = 0; i < him_adjuster.joints.length; i++){
+// 				him_adjuster.joints[i].initpos = newPostureHim[i].pos;
+// 				him_adjuster.joints[i].reset();
+// 				her_adjuster.joints[i].initpos = newPostureHer[i].pos;
+// 				her_adjuster.joints[i].reset();
+// 		}
+//
+// 		him_adjuster.shadow(him.getPosition());
+// 		her_adjuster.shadow(her.getPosition());
+//
+// 		for(var i = 0; i < her.joints.length; i++){
+// 			her.joints[i].initpos = newPostureHer[i].pos;
+// 			her.joints[i].reset();
+// 			him.joints[i].initpos = newPostureHim[i].pos;
+// 			him.joints[i].reset();
+// 		}
+//
+// 		him.limbs.forEach(function(l){
+// 			l.wither();
+// 		});
+// 		her.limbs.forEach(function(l){
+// 			l.wither();
+// 		});
+// 	}
+//
+// 	if(key == '0')
+// 		currentPosture = 0;
+// 	if(key == '1')
+// 		currentPosture = 1;
+// 	if(key == '2')
+// 		currentPosture = 2;
+// 	if(key == '3')
+// 		currentPosture = 3;
+// 	if(key == '4')
+// 		currentPosture = 4;
+// 		if(key == '5')
+// 			currentPosture = 5;
+//
+// 	if(key == 'u' || key == 'U'){
+// 		him_adjuster.unshadow();
+// 		her_adjuster.unshadow();
+//
+// 		setTimeout(function(){
+// 		him.limbs.forEach(function(l){
+// 			l.wither();
+// 		});
+// 		her.limbs.forEach(function(l){
+// 			l.wither();
+// 		});
+// 		}, 2000);
+//
+// 	}
+//
+// 	if(key == 'r' || key == 'R'){
+// 		her.joints.forEach(function(j){
+// 			j.reset();
+// 		});
+// 		him.joints.forEach(function(j){
+// 			j.reset();
+// 		});
+// 	}
+//
+// 	if(key == 'w' || key == 'W'){
+// 		him.limbs.forEach(function(l){
+// 			l.wither();
+// 		});
+// 		her.limbs.forEach(function(l){
+// 			l.wither();
+// 		});
+// 	}
+//
+// 	if(key == '['){
+// 		moveCoeff *= 0.9;
+// 	}
+//
+// 	if(key == ']'){
+// 		moveCoeff *= 1.1;
+// 	}
+//
+// 	if(key == '\\'){
+// 		him_adjuster.slowDown();
+// 		her_adjuster.slowDown();
+// 	}
+//
+// 	if(key == 'z')
+// 	canFade = true;
+//
+// 	return false;
+// }
 
 function displayJoints(){
 	for(var i = 0; i < joints.length; i++){
@@ -245,8 +245,18 @@ function posture_set(number){
 			her_adjuster.joints[i].reset();
 	}
 
-	him_adjuster.shadow(him.getPosition());
-	her_adjuster.shadow(her.getPosition());
+	if(currentPosture != 0){
+		him_adjuster.shadow(him.getPosition());
+		her_adjuster.shadow(her.getPosition());
+
+		him.limbs.forEach(function(l){
+			l.wither();
+		});
+
+		her.limbs.forEach(function(l){
+			l.wither();
+		});
+	}
 
 	for(var i = 0; i < her.joints.length; i++){
 		her.joints[i].initpos = newPostureHer[i].pos.copy();
@@ -254,6 +264,13 @@ function posture_set(number){
 		him.joints[i].initpos = newPostureHim[i].pos.copy();
 		him.joints[i].reset();
 	}
+
+
+}
+
+function posture_shadow(){
+	him_adjuster.shadow(him.getPosition());
+	her_adjuster.shadow(her.getPosition());
 
 	him.limbs.forEach(function(l){
 		l.wither();

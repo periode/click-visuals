@@ -131,6 +131,10 @@ function posture_reset(display){
   socket.emit('posture-reset', display);
 }
 
+function posture_shadow(display){
+  socket.emit('posture-shadow', display);
+}
+
 function posture_unshadow(display){
   socket.emit('posture-unshadow', display);
 }

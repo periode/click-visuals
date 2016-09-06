@@ -52,7 +52,7 @@ var Joint = function(_pos){
 	this.reset = function(){
 		this.velocity.mult(0);
 		this.acceleration.mult(0);
-		this.currentPos = createVector(this.pos.x, this.pos.y);
+		this.currentPos = createVector(this.resetpos.x, this.resetpos.y);
 		// this.initpos = this.resetpos.copy();
 		this.lerpVal = 0;
 	}

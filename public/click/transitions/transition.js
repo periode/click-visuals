@@ -57,21 +57,9 @@ function draw_transition(){
 
 function t_swipe_in(_index, _direction){
   t_direction = _direction;
-  if(t_direction == -1){//swipe left
-    t_start_pos = width*1.3;
-    t_end_pos = width*0.5;
 
-    t_index = _index + 4;
-
-    t_lerp_val = 0;
-  }else{
-    t_start_pos = -width*0.3;
-    t_end_pos = width*0.5;
-
-    t_index = _index + 4;
-
-    t_lerp_val = 0;
-  }
+  var i = _index+4;
+  t_title(i);
 }
 
 function t_swipe_out(){
