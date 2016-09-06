@@ -95,23 +95,22 @@ socket.on('posture-set', function(data){
 });
 
 socket.on('posture-reset', function(display){
-  console.log('reset');
-  if(display == 1)
+  // if(display == 1)
     posture_reset();
 });
 
 socket.on('posture-shadow', function(display){
-  if(display == 1)
+  // if(display == 1)
     posture_shadow();
 });
 
 socket.on('posture-unshadow', function(display){
-  if(display == 1)
+  // if(display == 1)
     posture_unshadow();
 });
 
 socket.on('posture-dance', function(display){
-  if(display == 1)
+  // if(display == 1)
     posture_dance();
 });
 

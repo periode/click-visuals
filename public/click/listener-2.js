@@ -98,22 +98,22 @@ socket.on('posture-set', function(data){
 });
 
 socket.on('posture-reset', function(display){
-  if(display == 2)
+  // if(display == 2)
     posture_reset();
 });
 
 socket.on('posture-shadow', function(display){
-  if(display == 2)
+  // if(display == 2)
     posture_shadow();
 });
 
 socket.on('posture-unshadow', function(display){
-  if(display == 2)
+  // if(display == 2)
     posture_unshadow();
 });
 
 socket.on('posture-dance', function(display){
-  if(display == 2)
+  // if(display == 2)
     posture_dance();
 });
 
