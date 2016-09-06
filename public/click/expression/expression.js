@@ -57,7 +57,7 @@ function keyTyped(){
 }
 
 function expression_set(data){
-
+    resetFPoints();
 }
 
 function expression_updateSpeed(data){

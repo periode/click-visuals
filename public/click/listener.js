@@ -90,7 +90,7 @@ socket.on('virus-update-speed', function(data){
 
 //POSTURE CONTROL
 socket.on('posture-set', function(data){
-  if(data.display == 1)
+  // if(data.display == 1)
     posture_set(data.posture);
 });
 

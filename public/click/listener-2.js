@@ -93,7 +93,7 @@ socket.on('virus-update-speed-2', function(data){
 
 //POSTURE CONTROL
 socket.on('posture-set', function(data){
-  if(data.display == 2)
+  // if(data.display == 2)
     posture_set(data.posture);
 });
 
@@ -128,4 +128,9 @@ socket.on('expression-update-speed', function(data){
 socket.on('expression-set', function(data){
   if(data.display == 2)
     expression_set(data.expression);
+});
+
+socket.on('expression-toggle', function(data){
+  if(data == 2)
+    toggleMoveFPoints();
 });
