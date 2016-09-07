@@ -33,7 +33,7 @@ function setup_transition(){
   content_pos = createVector(width*1.3, height*0.5);
   textSize(24);
   textAlign(CENTER, CENTER);
-  textFont("Roboto Mono");
+
 
 
     fill(0);
@@ -43,6 +43,7 @@ function setup_transition(){
 
 function draw_transition(){
   background(255);
+  textFont("Roboto Mono");
   if(t_index >= 0)
     text(content[t_index], content_pos.x, content_pos.y);
 
