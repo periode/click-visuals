@@ -3,7 +3,7 @@ var content_pos;
 var t_index = -2;
 
 var t_lerp_val = 0;
-var t_lerp_inc = 0.06;
+var t_lerp_inc = 0.04;
 
 var t_start_pos;
 var t_end_pos;
@@ -33,7 +33,7 @@ function setup_transition(){
   content_pos = createVector(width*1.3, height*0.5);
   textSize(24);
   textAlign(CENTER, CENTER);
-  textFont("Roboto Slab");
+  textFont("Roboto Mono");
 
 
     fill(0);
@@ -65,12 +65,12 @@ function t_swipe_in(_index, _direction){
 function t_swipe_out(){
   if(t_direction == -1){//move towards left edge
     t_start_pos = width*0.5;
-    t_end_pos = -width*0.3;
+    t_end_pos = -width*0.8;
 
     t_lerp_val = 0;
   }else{
     t_start_pos = width*0.5;
-    t_end_pos = width*1.3;
+    t_end_pos = width*1.8;
 
     t_lerp_val = 0;
   }
