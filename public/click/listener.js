@@ -35,12 +35,10 @@ socket.on('switch-scene', function(data){
 
 //SWIPE CONTROL
 socket.on('title', function(data){
-  if(data.display == 1)
     t_title(data.index);
 });
 
 socket.on('swipe', function(data){
-  if(data.display == 1)
     t_swipe(data.index, data.direction);
 });
 
